@@ -20,6 +20,12 @@
           text-transform: uppercase;
           font-weight: 600;
           font-size: rem(18px);
+
+          @include breakpoint(large) {
+            &:hover {
+              color: $primary;
+            }
+          }
         }
       }
     }
