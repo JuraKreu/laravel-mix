@@ -1,0 +1,177 @@
+.form-control {
+  border: none;
+  border-radius: 0;
+  padding: 10px 0;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  margin-bottom: 20px;
+}
+
+.form-control:focus {
+  border-color: unset;
+  box-shadow: none;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-text {
+  opacity: .4;
+  font-weight: 100;
+}
+
+.checkContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: rem(22px);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: 20px;
+}
+
+.checkContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer
+}
+
+.checkContainer a {
+  color: $primary;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 1px solid rgba(37, 40, 49, 0.3);
+  transition: $transition;
+  overflow: hidden
+}
+
+.checkmark:before {
+  content: '\f00c';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-200%);
+  top: 0;
+  font-family: $icon-font;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition;
+}
+
+.checkContainer:hover input ~ .checkmark {
+  background-color: rgba(37, 40, 49, 0.3)
+}
+
+.checkContainer input:checked ~ .checkmark {
+  background-color: $primary;
+  border: 1px solid $primary
+}
+
+.checkContainer input:checked ~ .checkmark:before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%)
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none
+}
+
+.checkContainer input:checked ~ .checkmark:after {
+  display: block
+}
+
+.checkContainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg)
+}
+
+.flexBtn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.buttonReset {
+  opacity: .4;
+  transition: 400ms all;
+  margin-right: 20px;
+}
+
+.buttonReset:hover {
+  opacity: 1;
+}
+
+.form-container {
+  position: relative;
+}
+
+label.error {
+  background: lighten($dark, 10);
+  padding: 6px 15px;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 5px;
+  color: $light;
+  text-align: left;
+  transition: $transition;
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 0;
+  z-index: 5;
+  box-shadow: 0 0 0 rgba(black, 1);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid lighten($dark, 10);
+  }
+}
+
+.w-form-done, .w-form-fail {
+  padding: 15px 20px;
+  width: 100%;
+  border-radius: 5px;
+  text-align: left;
+  position: absolute;
+  top: calc(100% + 30px);
+  left: 0;
+  z-index: 5;
+  box-shadow: 0 0 0 black;
+  font-size: rem(18px);
+  opacity: 0;
+  transform: translateY(100px);
+  margin-bottom: 50px;
+  visibility: hidden;
+
+  &.animate-in {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+
+}

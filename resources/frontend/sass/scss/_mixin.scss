@@ -1,0 +1,47 @@
+@use "sass:math";
+
+// Font Mixin
+@function rem($font-size) {
+  $remSize: math.div($font-size, 16px);
+  @return $remSize * 1rem;
+}
+
+@mixin font($font-size, $font-weight, $line-height, $main-font) {
+  font-size: rem($font-size);
+  line-height: $line-height;
+  font-weight: $font-weight;
+  font-family: $main-font;
+}
+
+// Breakpoints Mixin
+@mixin breakpoint($breakpoints) {
+
+  @if $breakpoints == default {
+    @media (max-width: $breakpoint-default) {
+      @content ;
+    }
+  }
+
+  @if $breakpoints == small {
+    @media (min-width: $breakpoint-small) {
+      @content;
+    }
+  } @else if $breakpoints == medium {
+    @media (min-width: $breakpoint-medium) {
+      @content;
+    }
+  } @else if $breakpoints == large {
+    @media (min-width: $breakpoint-large) {
+      @content;
+    }
+  } @else if $breakpoints == giant {
+    @media (min-width: $breakpoint-giant) {
+      @content;
+    }
+  } @else if $breakpoints == huge {
+    @media (min-width: $breakpoint-huge) {
+      @content;
+    }
+  }
+
+}

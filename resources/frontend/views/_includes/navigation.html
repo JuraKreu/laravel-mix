@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container d-flex justify-content-center align-items-center">
+        <a class="branding" href="/" title="Brand" alt="Brand">
+            <img src="{{ asset('frontend/images/ayda-logo.svg') }}" title="" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <include src="_menu/headermenu-items.html"></include>
+            </ul>
+        </div>
+    </div>
+</nav>

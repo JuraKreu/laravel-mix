@@ -1,0 +1,165 @@
+* {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  color: $dark;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  color: $dark;
+  background: #ebebeb;
+  @include font($font-size, $font-weight, $line-height, $main-font);
+
+  #page {
+    overflow: hidden;
+  }
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+a {
+  color: $primary;
+  transition: 500ms cubic-bezier(0.6, 0, 0, 0.5);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: $dark;
+  }
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  color: $light;
+  font-weight: 300;
+  white-space: nowrap;
+  vertical-align: middle;
+  display: inline-block;
+  user-select: none;
+  font-size: 1rem;
+  border: none;
+  border-radius: $border-radius;
+
+  &.btn-primary {
+    background: $primary;
+  }
+
+  &:before {
+    display: none;
+  }
+
+  &:hover {
+    @include breakpoint(medium) {
+      background: $dark;
+      color: $light;
+    }
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+.badge-info {
+  font-size: rem(12px);
+  background: $primary;
+  color: $light;
+  padding: rem(2px) rem(5px);
+  border-radius: rem(3px);
+  font-weight: 400;
+  position: absolute;
+  transform: translateY(-3px);
+  margin-left: rem(10px);
+}
+
+ul.styled {
+  margin: 0;
+
+  li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: .5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    i {
+      position: absolute;
+      left: 0;
+      top: 4px;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: rem(10px);
+  font-weight: 500;
+  color: $dark;
+  font-size: clamp(24px, 5vw + 1rem , 60px);
+  line-height: 1.5;
+
+  &.smaller {
+    font-size: clamp(20px, 5vw + 1rem , 34px);
+  }
+}
+
+.button-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+  gap: 20px;
+
+  li {
+    width: 100%;
+    background: $light;
+    box-shadow: 0 15px 30px -20px rgba(9, 9, 16, 0.25);
+    border-radius: rem(10px);
+    height: rem(50px);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint(medium) {
+      width: calc(30% - 10px);
+      box-shadow: 0 15px 30px -16px rgba(9, 9, 16, 0.2) !important;
+    }
+  }
+}
+
+.z-index--1 {
+  z-index: -1;
+}
