@@ -10,7 +10,7 @@ mix.sass('resources/frontend/sass/bootstrap.scss', 'public/css').sourceMaps().op
     processCssUrls: false
 });
 
-mix.js('resources/frontend/js/*.js', 'public/js');
+mix.js('resources/frontend/js/**/*.js', 'public/js');
 
 mix.copy( 'resources/frontend/images', 'public/images');
 
@@ -30,7 +30,7 @@ mix.browserSync({
     port: 3000,
     reload: true,
     files: [
-        "./public/*",
+        "./public/**/**/*",
     ]
 });
 

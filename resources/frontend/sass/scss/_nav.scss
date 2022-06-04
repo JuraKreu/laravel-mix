@@ -1,37 +1,41 @@
 .navbar {
   position: relative;
   width: 100%;
-  background: $dark;
+  background: darken(#ebebeb, 5);
 
   .navbar-collapse {
     justify-content: flex-end;
 
-    .nav-item {
+    .navbar-nav {
 
-      .nav-link {
-        color: $light;
-        @include breakpoint(large) {
-          margin-left: rem(20px);
+      @include breakpoint(large) {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-item {
+
+        .nav-link {
+          color: $dark;
+          text-transform: uppercase;
+          font-weight: 600;
+          font-size: rem(20px);
         }
       }
     }
   }
 
+  .navbar-toggler {
+    background: $dark;
+  }
+
   .branding {
     display: block;
-    padding: rem(20px) 0;
-
-    @include breakpoint(large) {
-      padding: rem(50px) 0;
-    }
+    padding-block: rem(25px);
 
     img {
-      width: rem(100px);
-      height: auto;
+      width: rem(80px);
 
-      @include breakpoint(large) {
-        width: rem(220px);
-      }
     }
   }
 }

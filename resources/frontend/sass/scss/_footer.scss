@@ -1,4 +1,14 @@
 footer {
   position: relative;
-  margin-block: rem(50px);
+  margin-block-start: rem(50px);
+}
+
+.nav-footer {
+  background: darken(#ebebeb, 5);
+  padding-block: rem(25px);
+  margin-block-start: rem(50px);
+
+  ul {
+    margin: 0;
+  }
 }
