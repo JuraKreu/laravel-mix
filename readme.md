@@ -1,5 +1,20 @@
+# Laravel Mix - Frontend Framework
+#### Created by Duplexmedia
+
+### 1. Install laravel-mix
+
+```shell script
 npm install laravel-mix --save-dev
+```
 
-npx mix
+### 2. Start Production
 
+```shell script
 npx mix watch
+```
+
+### Create Public directory
+
+```shell script
+npx mix
+```
