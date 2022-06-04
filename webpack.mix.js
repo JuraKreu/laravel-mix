@@ -3,9 +3,15 @@ require('mix-html-builder');
 require('laravel-mix-webp');
 require('laravel-mix-copy-watched');
 
-mix.sass('resources/frontend/sass/styles.scss', 'public/css').sourceMaps().options({processCssUrls: false})
-    .sass('resources/frontend/sass/bootstrap.scss', 'public/css').sourceMaps().options({processCssUrls: false})
-    .js('resources/frontend/js/**/*.js', 'public/js');
+mix.sass('resources/frontend/sass/styles.scss', 'public/css').sourceMaps()
+    .sass('resources/frontend/sass/bootstrap.scss', 'public/css').sourceMaps()
+    .js('resources/frontend/js/**/*.js', 'public/js')
+    .options({
+        processCssUrls: false,
+        terser: {
+            extractComments: false
+        }
+    });
 
 mix.copyWatched(
     'resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
