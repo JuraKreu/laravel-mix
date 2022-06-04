@@ -1,0 +1,5 @@
+.app {
+  background: grey;
+  display: flex;
+  transform: translateX(50%);
+}
