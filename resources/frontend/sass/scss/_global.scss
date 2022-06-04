@@ -37,7 +37,7 @@ a {
 
   &:hover {
     text-decoration: none;
-    color: $dark;
+    color: $primary;
   }
 }
 
@@ -86,7 +86,7 @@ p {
 
   &:hover {
     @include breakpoint(medium) {
-      background: $dark;
+      background: $primary;
       color: $light;
     }
   }

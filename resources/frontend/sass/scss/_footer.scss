@@ -4,11 +4,16 @@ footer {
 }
 
 .nav-footer {
-  background: darken(#ebebeb, 5);
+  background: $dark;
   padding-block: rem(25px);
   margin-block-start: rem(50px);
 
   ul {
     margin: 0;
+    li {
+      a {
+        color: $light;
+      }
+    }
   }
 }

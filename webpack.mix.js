@@ -1,20 +1,23 @@
-let mix = require('laravel-mix')
+let mix = require('laravel-mix');
 require('mix-html-builder');
-require('laravel-mix-webp')
+require('laravel-mix-webp');
+require('laravel-mix-copy-watched');
 
-mix.sass('resources/frontend/sass/styles.scss', 'public/css').sourceMaps().options({
-    processCssUrls: false
-});
+mix.sass('resources/frontend/sass/styles.scss', 'public/css').sourceMaps().options({processCssUrls: false})
+    .sass('resources/frontend/sass/bootstrap.scss', 'public/css').sourceMaps().options({processCssUrls: false})
+    .js('resources/frontend/js/**/*.js', 'public/js');
 
-mix.sass('resources/frontend/sass/bootstrap.scss', 'public/css').sourceMaps().options({
-    processCssUrls: false
-});
+mix.copyWatched(
+    'resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
+    'public/images',
+    { base: 'resources/frontend/images' }
+);
 
-mix.js('resources/frontend/js/**/*.js', 'public/js');
-
-mix.copy( 'resources/frontend/images', 'public/images');
-
-mix.copy( 'resources/frontend/fonts', 'public/fonts');
+mix.copyWatched(
+    'resources/frontend/fonts/**/*.{woff,woff2}',
+    'public/fonts',
+    { base: 'resources/frontend/fonts' }
+);
 
 mix.ImageWebp({
     from: 'resources/frontend/images',
@@ -30,7 +33,12 @@ mix.browserSync({
     port: 3000,
     reload: true,
     files: [
-        "./public/**/**/*",
+        "public/**/**/**/**/*",
+        "resources/frontend/views/**/**/*",
+        'resources/frontend/fonts/**/*.{woff,woff2}',
+        'resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
+        'resources/frontend/js/**/*.js',
+        'resources/frontend/sass/**/*.scss',
     ]
 });
 
@@ -39,7 +47,15 @@ mix.html ({
     output: 'public',
     partialRoot: './resources/frontend/views',
     layoutRoot: './resources/frontend/views',
-    options: {
-        minimize: true
+    minify: {
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
     }
 });
+
+if (mix.inProduction()) {
+    mix.version()
+}

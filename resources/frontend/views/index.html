@@ -8,7 +8,12 @@
     <div id="page">
         <include src="_includes/navigation.html"></include>
         <header>
-            <include src="_blocks/headline.html"></include>
+            <include src="_blocks/headline.html">
+                {
+                    "headline": "Laravel Mix",
+                    "text": "Frontend Framework"
+                }
+            </include>
         </header>
         <main>
             <include src="_blocks/image.html"></include>
@@ -19,9 +24,6 @@
     </div>
     <include src="_includes/scripts.html"></include>
 </body>
-<html>
-
-
 
 
 
