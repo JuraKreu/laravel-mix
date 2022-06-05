@@ -5,7 +5,9 @@ require('laravel-mix-copy-watched');
 
 mix.sass('resources/frontend/sass/styles.scss', 'public/css').sourceMaps()
     .sass('resources/frontend/sass/bootstrap.scss', 'public/css').sourceMaps()
-    .js('resources/frontend/js/**/*.js', 'public/js')
+    .js('resources/frontend/js/bootstrap.js', 'public/js')
+    .js('resources/frontend/js/fontawesome.js', 'public/js')
+    .js('resources/frontend/js/core.js', 'public/js')
     .options({
         processCssUrls: false
     });
@@ -55,6 +57,12 @@ mix.html ({
     htmlRoot: './resources/frontend/views/*.html',
     output: 'public',
     partialRoot: './resources/frontend/views',
-    layoutRoot: './resources/frontend/views'
+    layoutRoot: './resources/frontend/views',
+    minify: {
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+    }
 });
-

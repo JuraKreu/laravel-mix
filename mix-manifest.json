@@ -1,4 +1,6 @@
 {
+    "/public/js/bootstrap.js": "/public/js/bootstrap.js",
+    "/public/js/fontawesome.js": "/public/js/fontawesome.js",
     "/public/js/core.js": "/public/js/core.js",
     "/public/css/bootstrap.css": "/public/css/bootstrap.css",
     "/public/css/styles.css": "/public/css/styles.css",
@@ -22,5 +24,8 @@
     "/public/fonts/webfont/RobotoCondensed-LightItalic.woff": "/public/fonts/webfont/RobotoCondensed-LightItalic.woff",
     "/public/fonts/webfont/RobotoCondensed-LightItalic.woff2": "/public/fonts/webfont/RobotoCondensed-LightItalic.woff2",
     "/public/fonts/webfont/RobotoCondensed-Regular.woff": "/public/fonts/webfont/RobotoCondensed-Regular.woff",
-    "/public/fonts/webfont/RobotoCondensed-Regular.woff2": "/public/fonts/webfont/RobotoCondensed-Regular.woff2"
+    "/public/fonts/webfont/RobotoCondensed-Regular.woff2": "/public/fonts/webfont/RobotoCondensed-Regular.woff2",
+    "/public/js/core.min.js": "/public/js/core.min.js",
+    "/public/js/fontawesome.min.js": "/public/js/fontawesome.min.js",
+    "/public/js/bootstrap.min.js": "/public/js/bootstrap.min.js"
 }
