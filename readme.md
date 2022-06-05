@@ -1,13 +1,18 @@
 # Laravel Mix - Frontend Framework
 #### Created by Duplexmedia
 
-### 1. Install laravel-mix
+### 1. Create a .env config file
+```shell script
+cp .env.example .env
+```
+
+### 2. Install laravel-mix
 
 ```shell script
 npm install laravel-mix --save-dev
 ```
 
-### 2. Start Production
+### 3. Start Production
 
 ```shell script
 npx mix watch
