@@ -61,7 +61,16 @@ mix.setPublicPath('public/')
     .browserSync({
         host: proxy_url,
         server: proxy_path,
-        port: proxy_port
+        port: proxy_port,
+        reload: true,
+        files: [
+            "public/**/**/**/**/*",
+            "resources/frontend/views/**/**/*",
+            'resources/frontend/fonts/**/*.{woff,woff2}',
+            'resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
+            'resources/frontend/js/**/*.js',
+            'resources/frontend/sass/**/*.scss',
+        ]
     })
     .html ({
         htmlRoot: './resources/frontend/views/*.html',
