@@ -14,15 +14,15 @@ main {
 
 .video-container {
   position: relative;
-  padding: rem(50px);
   overflow: hidden;
 
-  @include breakpoint (large) {
-    padding-block: rem(200px);
-  }
-
-  @include breakpoint (giant) {
-    padding-block: rem(300px);
+  h2 {
+    color: $light;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    text-transform: uppercase;
+    margin-block-end: rem(50px);
   }
 
   .apps-container {
@@ -37,6 +37,10 @@ main {
     margin: 0;
     perspective: 1000px;
 
+    @include breakpoint (large) {
+      flex-wrap: nowrap;
+    }
+
     li {
       background: rgba($dark, 1);
       border-radius: rem(5px);
@@ -49,10 +53,11 @@ main {
       width: 100%;
 
       @include breakpoint (small) {
-        width: clamp(150px, 25vw, 300px);
+        width: clamp(150px, 25vw, 200px);
       }
 
       @include breakpoint (large) {
+        width: 100%;
 
           &:hover {
             background: $primary;
@@ -69,7 +74,7 @@ main {
         transform: translate(-50%, -50%);
         color: $light;
         font-weight: 600;
-        font-size: clamp(18px,  1vw + 1rem, 30px);
+        font-size: clamp(18px,  1vw + 1rem, 24px);
         letter-spacing: 2px;
         text-transform: uppercase;
         display: flex;

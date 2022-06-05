@@ -8,7 +8,7 @@ let proxy_url = process.env.BROWSERSYNC_PROXY_URL,
     proxy_port = process.env.BROWSERSYNC_PROXY_PORT,
     proxy_path = process.env.BROWSERSYNC_PROXY_PATH;
 
-mix.setPublicPath('public/')
+mix.setPublicPath('public/src/')
     .webpackConfig({
         output: {
             publicPath: "public/"
@@ -32,28 +32,28 @@ mix.setPublicPath('public/')
     })
     .copyWatched(
         'resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
-        'public/images',
+        'public/src/images',
         {
             base: 'resources/frontend/images'
         }
     )
     .copyWatched(
         'resources/frontend/files/**/*',
-        'public/files',
+        'public/src/files',
         {
             base: 'resources/frontend/files'
         }
     )
     .copyWatched(
         'resources/frontend/fonts/**/*.{woff,woff2}',
-        'public/fonts',
+        'public/src/fonts',
         {
             base: 'resources/frontend/fonts'
         }
     )
     .ImageWebp({
         from: 'resources/frontend/images',
-        to: 'public/images',
+        to: 'public/src/images',
         imageminWebpOptions: {
             quality: 100
         },
@@ -74,7 +74,7 @@ mix.setPublicPath('public/')
     })
     .html ({
         htmlRoot: './resources/frontend/views/*.html',
-        output: '',
+        output: '../',
         partialRoot: './resources/frontend/views',
         layoutRoot: './resources/frontend/views',
         minify: {
