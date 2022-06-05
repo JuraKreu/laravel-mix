@@ -28,7 +28,7 @@ mix.setPublicPath('public/')
         purifyCss: false,
         clearConsole: false,
         terser: { extractComments: false },
-        postCss: [require('autoprefixer')]
+        autoprefixer: true
     })
     .copyWatched(
         'resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
