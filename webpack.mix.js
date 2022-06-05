@@ -9,6 +9,14 @@ let proxy_url = process.env.BROWSERSYNC_PROXY_URL,
     proxy_path = process.env.BROWSERSYNC_PROXY_PATH;
 
 mix.setPublicPath('public/')
+    .webpackConfig({
+        output: {
+            publicPath: "public/",
+        },
+        stats: {
+            children: true,
+        },
+    })
     .sass('resources/frontend/sass/styles.scss', 'css').sourceMaps()
     .sass('resources/frontend/sass/bootstrap.scss', 'css').sourceMaps()
     .js('resources/frontend/js/bootstrap.js', 'js')
@@ -53,16 +61,7 @@ mix.setPublicPath('public/')
     .browserSync({
         host: proxy_url,
         server: proxy_path,
-        port: proxy_port,
-        reload: true,
-        files: [
-            "public/**/**/**/**/*",
-            "resources/frontend/views/**/**/*",
-            'resources/frontend/fonts/**/*.{woff,woff2}',
-            'resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
-            'resources/frontend/js/**/*.js',
-            'resources/frontend/sass/**/*.scss',
-        ]
+        port: proxy_port
     })
     .html ({
         htmlRoot: './resources/frontend/views/*.html',
