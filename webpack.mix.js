@@ -8,52 +8,56 @@ let proxy_url = process.env.BROWSERSYNC_PROXY_URL,
     proxy_port = process.env.BROWSERSYNC_PROXY_PORT,
     proxy_path = process.env.BROWSERSYNC_PROXY_PATH;
 
-mix.setPublicPath('public/src/')
+mix
+    .setResourceRoot("../")
+    .setPublicPath('./public/src/')
     .webpackConfig({
         output: {
-            publicPath: "public/"
+            publicPath: "./public/"
         },
         stats: {
-            children: true
-        },
+            children: false
+        }
     })
-    .sass('resources/frontend/sass/styles.scss', 'css').sourceMaps()
-    .sass('resources/frontend/sass/bootstrap.scss', 'css').sourceMaps()
-    .js('resources/frontend/js/bootstrap.js', 'js')
-    .js('resources/frontend/js/fontawesome.js', 'js')
-    .js('resources/frontend/js/core.js', 'js')
+    .sass('./resources/frontend/sass/styles.scss', 'css')
+    .sass('./resources/frontend/sass/bootstrap.scss', 'css')
+    .js('./resources/frontend/js/bootstrap.js', 'js')
+    .js('./resources/frontend/js/fontawesome.js', 'js')
+    .js('./resources/frontend/js/core.js', 'js')
     .sourceMaps()
     .options({
         processCssUrls: false,
         purifyCss: false,
         clearConsole: false,
-        terser: { extractComments: false },
+        terser: {
+            extractComments: false
+        },
         autoprefixer: true
     })
     .copyWatched(
-        'resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
-        'public/src/images',
+        './resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
+        './public/src/images',
         {
-            base: 'resources/frontend/images'
+            base: './resources/frontend/images'
         }
     )
     .copyWatched(
-        'resources/frontend/files/**/*',
-        'public/src/files',
+        './resources/frontend/files/**/*',
+        './public/src/files',
         {
-            base: 'resources/frontend/files'
+            base: './resources/frontend/files'
         }
     )
     .copyWatched(
-        'resources/frontend/fonts/**/*.{woff,woff2}',
-        'public/src/fonts',
+        './resources/frontend/fonts/**/*.{woff,woff2}',
+        './public/src/fonts',
         {
-            base: 'resources/frontend/fonts'
+            base: './resources/frontend/fonts'
         }
     )
     .ImageWebp({
-        from: 'resources/frontend/images',
-        to: 'public/src/images',
+        from: './resources/frontend/images',
+        to: './public/src/images',
         imageminWebpOptions: {
             quality: 100
         },
@@ -62,14 +66,16 @@ mix.setPublicPath('public/src/')
         host: proxy_url,
         server: proxy_path,
         port: proxy_port,
+        reloadOnRestart: true,
         reload: true,
+        ghostMode: false,
         files: [
-            "public/**/**/**/**/*",
-            "resources/frontend/views/**/**/*.html",
-            'resources/frontend/fonts/**/*.{woff,woff2}',
-            'resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
-            'resources/frontend/js/**/*.js',
-            'resources/frontend/sass/**/*.scss',
+            "./public/*",
+            "./resources/frontend/views/**/**/*.html",
+            './resources/frontend/fonts/**/*.{woff,woff2}',
+            './resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
+            './resources/frontend/js/**/*.js',
+            './resources/frontend/sass/**/*.scss',
         ]
     })
     .html ({
@@ -85,7 +91,3 @@ mix.setPublicPath('public/src/')
             useShortDoctype: true
         }
     })
-
-if (mix.inProduction()) {
-    mix.version()
-}
