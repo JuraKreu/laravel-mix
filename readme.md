@@ -18,3 +18,9 @@ npx mix watch
 ```shell script
 npx mix
 ```
+
+### Minify Production
+
+```shell script
+npx mix --production
+```

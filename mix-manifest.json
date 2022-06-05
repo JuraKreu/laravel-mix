@@ -24,8 +24,5 @@
     "/public/fonts/webfont/RobotoCondensed-LightItalic.woff": "/public/fonts/webfont/RobotoCondensed-LightItalic.woff",
     "/public/fonts/webfont/RobotoCondensed-LightItalic.woff2": "/public/fonts/webfont/RobotoCondensed-LightItalic.woff2",
     "/public/fonts/webfont/RobotoCondensed-Regular.woff": "/public/fonts/webfont/RobotoCondensed-Regular.woff",
-    "/public/fonts/webfont/RobotoCondensed-Regular.woff2": "/public/fonts/webfont/RobotoCondensed-Regular.woff2",
-    "/public/js/core.min.js": "/public/js/core.min.js",
-    "/public/js/fontawesome.min.js": "/public/js/fontawesome.min.js",
-    "/public/js/bootstrap.min.js": "/public/js/bootstrap.min.js"
+    "/public/fonts/webfont/RobotoCondensed-Regular.woff2": "/public/fonts/webfont/RobotoCondensed-Regular.woff2"
 }

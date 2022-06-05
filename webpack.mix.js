@@ -2,6 +2,7 @@ let mix = require('laravel-mix');
 require('mix-html-builder');
 require('laravel-mix-webp');
 require('laravel-mix-copy-watched');
+require('mix-env-file');
 
 mix.sass('resources/frontend/sass/styles.scss', 'public/css').sourceMaps()
     .sass('resources/frontend/sass/bootstrap.scss', 'public/css').sourceMaps()
@@ -15,19 +16,25 @@ mix.sass('resources/frontend/sass/styles.scss', 'public/css').sourceMaps()
 mix.copyWatched(
     'resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
     'public/images',
-    { base: 'resources/frontend/images' }
+    {
+        base: 'resources/frontend/images'
+    }
 );
 
 mix.copyWatched(
     'resources/frontend/files/**/*',
     'public/files',
-    { base: 'resources/frontend/files' }
+    {
+        base: 'resources/frontend/files'
+    }
 );
 
 mix.copyWatched(
     'resources/frontend/fonts/**/*.{woff,woff2}',
     'public/fonts',
-    { base: 'resources/frontend/fonts' }
+    {
+        base: 'resources/frontend/fonts'
+    }
 );
 
 mix.ImageWebp({
@@ -38,10 +45,14 @@ mix.ImageWebp({
     },
 })
 
+let proxy_url = process.env.BROWSERSYNC_PROXY_URL,
+    proxy_port = process.env.BROWSERSYNC_PROXY_PORT,
+    proxy_path = process.env.BROWSERSYNC_PROXY_PATH;
+
 mix.browserSync({
-    host: 'localhost',
-    server: 'public',
-    port: 3000,
+    host: proxy_url,
+    server: proxy_path,
+    port: proxy_port,
     reload: true,
     files: [
         "public/**/**/**/**/*",
@@ -66,3 +77,5 @@ mix.html ({
         useShortDoctype: true
     }
 });
+
+
