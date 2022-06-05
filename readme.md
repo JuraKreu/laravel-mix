@@ -18,13 +18,13 @@ npm install laravel-mix --save-dev
 npx mix watch
 ```
 
-### Create Public directory
+### Create Public directory or Webp Images
 
 ```shell script
 npx mix
 ```
 
-### Minify Production directory
+### Minify Public directory
 
 ```shell script
 npx mix --production
