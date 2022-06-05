@@ -11,10 +11,10 @@ let proxy_url = process.env.BROWSERSYNC_PROXY_URL,
 mix.setPublicPath('public/')
     .webpackConfig({
         output: {
-            publicPath: "public/",
+            publicPath: "public/"
         },
         stats: {
-            children: true,
+            children: true
         },
     })
     .sass('resources/frontend/sass/styles.scss', 'css').sourceMaps()
