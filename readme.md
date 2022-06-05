@@ -6,13 +6,19 @@
 cp .env.example .env
 ```
 
-### 2. Install laravel-mix
+### 2. Register Fontawesome
 
 ```shell script
 npm install laravel-mix --save-dev
 ```
 
-### 3. Start Production
+### 3. Install laravel-mix
+
+```shell script
+npm install laravel-mix --save-dev
+```
+
+### 4. Start Production
 
 ```shell script
 npx mix watch
