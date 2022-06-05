@@ -5,12 +5,14 @@ code {
   color: $light;
   display: block;
   margin-block-end: rem(20px);
-  font-family: monospace;
+  font-weight: 300;
+  letter-spacing: 1px;
 
   span {
     margin-block-start: rem(10px);
     display: block;
     line-height: 1.4;
+    opacity: .5;
 
     &:first-child {
       margin: 0;
