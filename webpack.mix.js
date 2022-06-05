@@ -1,14 +1,14 @@
-let mix = require('laravel-mix');
-require('mix-html-builder');
-require('laravel-mix-webp');
-require('laravel-mix-copy-watched');
-require('dotenv').config();
+let mix = require('laravel-mix')
+require('mix-html-builder')
+require('laravel-mix-webp')
+require('laravel-mix-copy-watched')
+require('dotenv').config()
 
 let proxy_url = process.env.BROWSERSYNC_PROXY_URL,
     proxy_port = process.env.BROWSERSYNC_PROXY_PORT,
     proxy_path = process.env.BROWSERSYNC_PROXY_PATH;
 
-mix.setPublicPath('public')
+mix.setPublicPath('public/')
     .sass('resources/frontend/sass/styles.scss', 'css').sourceMaps()
     .sass('resources/frontend/sass/bootstrap.scss', 'css').sourceMaps()
     .js('resources/frontend/js/bootstrap.js', 'js')
@@ -19,6 +19,7 @@ mix.setPublicPath('public')
         processCssUrls: false,
         purifyCss: false,
         clearConsole: false,
+        terser: { extractComments: false },
         postCss: [require('autoprefixer')]
     })
     .copyWatched(
@@ -75,6 +76,8 @@ mix.setPublicPath('public')
             removeStyleLinkTypeAttributes: true,
             useShortDoctype: true
         }
-    });
+    })
 
-
+if (mix.inProduction()) {
+    mix.version()
+}
