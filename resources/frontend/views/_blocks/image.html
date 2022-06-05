@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container {{ container_class }}">
     <div class="row justify-content-center">
-        <div class="col-12 col-lg-10">
+        <div class="col-12 col-lg-12">
             <picture>
                 <source srcset="{{ image_url }}.webp" type="image/webp">
-                <img class="img-fluid" src="{{ image_url }}.png" alt="{{ alt }}">
+                <img class="img-fluid" src="{{ image_url }}.png" alt="{{ image_alt }}">
             </picture>
         </div>
     </div>

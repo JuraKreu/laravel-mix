@@ -1,19 +1,36 @@
 footer {
   position: relative;
   margin-block-start: rem(50px);
-}
-
-.nav-footer {
   background: $dark;
   padding-block: rem(25px);
-  margin-block-start: rem(50px);
 
-  ul {
+  p {
+    color: $light;
     margin: 0;
-    li {
-      a {
-        color: $light;
+    font-weight: 300;
+    font-size: rem(16px);
+  }
+
+  .nav-footer {
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        a {
+          color: $light;
+          font-size: rem(16px);
+
+          &:hover {
+            @include breakpoint (large) {
+                color: $primary;
+            }
+          }
+        }
       }
     }
   }
 }
+
+

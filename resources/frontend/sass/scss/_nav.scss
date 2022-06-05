@@ -1,7 +1,10 @@
 .navbar {
-  position: relative;
+  position: fixed;
+  top: 0;
   width: 100%;
   background: darken(#ebebeb, 5);
+  z-index: 100;
+  box-shadow: 0 20px 50px -20px rgba(9, 9, 16, 0.5);
 
   .navbar-collapse {
     justify-content: flex-end;
@@ -18,7 +21,7 @@
         .nav-link {
           color: $dark;
           text-transform: uppercase;
-          font-weight: 600;
+          font-weight: 400;
           font-size: rem(18px);
 
           @include breakpoint(large) {
@@ -35,13 +38,14 @@
     background: $dark;
   }
 
-  .branding {
-    display: block;
-    padding-block: rem(25px);
+}
 
-    img {
-      width: rem(80px);
+.branding {
+  display: block;
+  margin-block-start: 200px;
 
-    }
+  img {
+    width: 100%;
+    max-width: rem(225px);
   }
 }

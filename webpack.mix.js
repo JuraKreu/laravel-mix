@@ -7,16 +7,19 @@ mix.sass('resources/frontend/sass/styles.scss', 'public/css').sourceMaps()
     .sass('resources/frontend/sass/bootstrap.scss', 'public/css').sourceMaps()
     .js('resources/frontend/js/**/*.js', 'public/js')
     .options({
-        processCssUrls: false,
-        terser: {
-            extractComments: false
-        }
+        processCssUrls: false
     });
 
 mix.copyWatched(
     'resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
     'public/images',
     { base: 'resources/frontend/images' }
+);
+
+mix.copyWatched(
+    'resources/frontend/files/**/*',
+    'public/files',
+    { base: 'resources/frontend/files' }
 );
 
 mix.copyWatched(
@@ -52,16 +55,6 @@ mix.html ({
     htmlRoot: './resources/frontend/views/*.html',
     output: 'public',
     partialRoot: './resources/frontend/views',
-    layoutRoot: './resources/frontend/views',
-    minify: {
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-    }
+    layoutRoot: './resources/frontend/views'
 });
 
-if (mix.inProduction()) {
-    mix.version()
-}

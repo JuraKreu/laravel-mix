@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row align-items-center" id="{{ id }}">
+        <div class="col-12 col-lg-5 {{ class_img }}">
+            <picture>
+                <source srcset="{{ image_url }}.webp" type="image/webp">
+                <img class="img-fluid border-radius" src="{{ image_url }}.png" alt="{{ image_alt }}">
+            </picture>
+        </div>
+        <div class="col-12 col-lg-6 {{ class_text }}">
+            <h2 class="text-uppercase">{{ headline }}</h2>
+            <p>{{ text }}</p>
+            <a class="btn w-auto" href="{{ link_url }}" title="{{ link_title }}">{{ link_text }}</a>
+        </div>
+    </div>
+</div>

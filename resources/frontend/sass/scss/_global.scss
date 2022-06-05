@@ -59,22 +59,24 @@ p {
 }
 
 .btn {
-  padding-inline: rem(25px);
+  padding-inline: rem(40px);
   background: $dark;
   color: $light;
-  font-weight: 300;
+  font-weight: 600;
   white-space: nowrap;
   vertical-align: middle;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   user-select: none;
-  box-shadow: 0 15px 30px -20px rgba(9, 9, 16, 0.25);
+  box-shadow: 0 20px 50px -10px rgba(9, 9, 16, 0.5);
   font-size: 1rem;
   border: none;
   border-radius: $border-radius;
   width: 100%;
   height: rem(50px);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 
   &.btn-primary {
     background: $primary;
@@ -132,14 +134,24 @@ ul.styled {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: rem(10px);
-  font-weight: 500;
+  font-weight: 600;
   color: $dark;
   font-size: clamp(24px, 5vw + 1rem , 60px);
   line-height: 1.5;
+  letter-spacing: 5px;
 
   &.smaller {
     font-size: clamp(20px, 5vw + 1rem , 34px);
   }
+}
+
+h2, .h2 {
+  margin-bottom: rem(10px);
+  font-weight: 600;
+  color: $dark;
+  font-size: clamp(24px, 5vw + 1rem , 40px);
+  line-height: 1.5;
+  letter-spacing: 2px;
 }
 
 .button-list {
@@ -154,4 +166,12 @@ h1, h2, h3, h4, h5, h6,
 
 .z-index--1 {
   z-index: -1;
+}
+
+.border-radius {
+  border-radius: rem(10px);
+}
+
+.margin-block-start-100 {
+  margin-block-start: rem(100px);
 }

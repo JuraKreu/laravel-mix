@@ -5,29 +5,91 @@
     <block name="description"><meta name="description" content="Beschreibung"></block>
 </extends>
 <body class="no-js home">
-    <div id="page">
-        <include src="_includes/navigation.html"></include>
-        <header>
-            <include src="_blocks/headline.html">
-                {
-                    "headline": "Laravel Mix",
-                    "text": "Frontend Framework"
-                }
-            </include>
-        </header>
-        <main>
-            <include src="_blocks/image.html">
-                {
-                    "image_url": "/../images/preview",
-                    "alt": "Preview"
-                }
-           </include>
-        </main>
-        <footer>
-            <include src="_includes/footer.html"></include>
-        </footer>
-    </div>
-    <include src="_includes/scripts.html"></include>
+<div id="page">
+    <include src="_includes/navigation.html"></include>
+    <header>
+        <div class="d-flex justify-content-center">
+            <a class="branding" href="/" title="Brand" alt="Brand">
+                <img src="/../images/logo.svg" title="Logo" alt="Logo">
+            </a>
+        </div>
+        <include src="_blocks/headline.html">
+            {
+                "class": "text-center pt-5 mb-5",
+                "headline": "Laravel Mix",
+                "text": "Frontend Framework"
+            }
+        </include>
+    </header>
+    <main>
+        <include src="_blocks/video.html">
+            {
+                "container_class": "margin-block-start-100",
+                "video_url": "/../files/video"
+            }
+        </include>
+        <include src="_blocks/headline_text_image.html">
+            {
+                "id": "bootstrap",
+                "class_img": "",
+                "class_text": "offset-lg-1",
+                "image_url": "/../images/bootstrap",
+                "image_alt": "Bootstrap",
+                "headline": "Bootstrap",
+                "text": "Why do we need Bootstrap? Software engineers use Bootstrap for a number of different reasons. It is easy to set up and master, it has a lot of components, a good grid system, styling for many HTML elements ranging from typography to buttons, as well as support of JavaScript plugins, making it even more flexible.",
+                "link_text": "Get started",
+                "link_title": "Bootstrap 5",
+                "link_url": "https://getbootstrap.com/"
+            }
+        </include>
+        <include src="_blocks/headline_text_image.html">
+            {
+                "id": "laravel",
+                "class_img": "order-lg-2 offset-lg-1",
+                "class_text": "col-lg-5",
+                "image_url": "/../images/laravel-mix",
+                "image_alt": "Laravel Mix",
+                "headline": "Laravel Mix",
+                "text": "Laravel Mix, a package developed by Laracasts creator Jeffrey Way, provides a fluent API for defining webpack build steps for your Laravel application using several common CSS and JavaScript pre-processors.",
+                "link_text": "Read the docs",
+                "link_title": "Laravel Mix",
+                "link_url": "https://laravel-mix.com/"
+            }
+        </include>
+        <include src="_blocks/headline_text_image.html">
+            {
+                "id": "sass",
+                "class_img": "",
+                "class_text": "offset-lg-1",
+                "image_url": "/../images/sass",
+                "image_alt": "SASS",
+                "headline": "SASS",
+                "text": "Sass accelerates you to write clean, easy, and few lines of the CSS code in a programming construct. If you want to handle bigger projects in an organized way, then we recommend you use Scss in your project. It can perform basic calculations, reuse code using mixins, and create functions.",
+                "link_text": "Check it out",
+                "link_title": "Sass",
+                "link_url": "https://sass-lang.com/guide"
+            }
+        </include>
+        <include src="_blocks/headline_text_image.html">
+            {
+            "id": "webpack",
+            "class_img": "order-lg-2  offset-lg-1",
+            "class_text": "col-lg-5",
+            "image_url": "/../images/webpack",
+            "image_alt": "Webpack",
+            "headline": "Webpack",
+            "text": "Webpack gives you control over how to treat different assets it encounters. For example, you can decide to inline assets to your JavaScript bundles to avoid requests. Webpack also allows you to use techniques like CSS Modules to couple styling with components, and to avoid issues of standard CSS styling.",
+            "link_text": "Check it out",
+            "link_title": "Webpack",
+            "link_url": "https://webpack.js.org/"
+            }
+        </include>
+    </main>
+    <footer>
+        <include src="_includes/footer.html"></include>
+    </footer>
+</div>
+<include src="_includes/scripts.html"></include>
 </body>
 
 
