@@ -60,7 +60,7 @@ p {
 
 .btn {
   padding-inline: rem(40px);
-  background: $dark;
+  background: $primary;
   color: $light;
   font-weight: 600;
   white-space: nowrap;
@@ -88,7 +88,7 @@ p {
 
   &:hover {
     @include breakpoint(medium) {
-      background: $primary;
+      background: $dark;
       color: $light;
     }
   }
@@ -142,16 +142,17 @@ h1, h2, h3, h4, h5, h6,
 
   &.smaller {
     font-size: clamp(20px, 5vw + 1rem , 34px);
+
   }
 }
 
 h2, .h2 {
-  margin-bottom: rem(10px);
   font-weight: 600;
   color: $dark;
   font-size: clamp(24px, 5vw + 1rem , 40px);
   line-height: 1.5;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  margin: 0;
 }
 
 .button-list {

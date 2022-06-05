@@ -1,1 +1,41 @@
+code {
+  background: $dark;
+  padding: rem(25px);
+  border-radius: rem(5px);
+  color: $light;
+  display: block;
+  margin-block-end: rem(20px);
+  font-family: monospace;
 
+  span {
+    margin-block-start: rem(10px);
+    display: block;
+    line-height: 1.4;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+
+  pre {
+    padding: 0;
+    margin-block: rem(5px) rem(25px);
+    overflow: hidden;
+    display: block;
+    color: #d63384;
+
+    &:last-child {
+      margin-block-end:0 ;
+    }
+
+    i {
+      color: chartreuse;
+    }
+
+    b {
+      color: $light;
+      opacity: .25;
+      font-weight: 300;
+    }
+  }
+}

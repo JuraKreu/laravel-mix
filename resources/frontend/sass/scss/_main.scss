@@ -7,7 +7,7 @@ main {
     }
 
     @include breakpoint (giant) {
-      margin-block: rem(250px);
+      margin-block: rem(200px);
     }
   }
 }
