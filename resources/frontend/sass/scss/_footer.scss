@@ -1,7 +1,6 @@
 footer {
   position: relative;
-  margin-block-start: rem(50px);
-  background: $dark;
+  background: darken($dark, 10);
   padding-block: rem(25px);
 
   p {
@@ -21,6 +20,7 @@ footer {
         a {
           color: $light;
           font-size: rem(16px);
+          text-transform: uppercase;
 
           &:hover {
             @include breakpoint (large) {

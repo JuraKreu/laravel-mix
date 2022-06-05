@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<extends src="_includes/head.html">
+    <block name="title">
+        <title>Documentation</title>
+    </block>
+    <block name="description">
+        <meta name="description" content="Beschreibung">
+    </block>
+</extends>
+<body class="no-js documentation">
+<div id="page">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-center">
+                        <a class="branding" href="/" title="Brand" alt="Brand">
+                            <img src="/src/images/logo.svg" title="Logo" alt="Logo">
+                        </a>
+                    </div>
+                    <include src="_blocks/headline.html">
+                        {
+                        "class": "text-center",
+                        "headline": "Laravel Mix",
+                        "text": "Frontend Framework"
+                        }
+                    </include>
+                </div>
+            </div>
+        </div>
+    </header>
+    <extends src="_includes/navigation.html">
+        <block name="navigation">
+            <li class="nav-item">
+                <a class="nav-link" target="_self" href="#bootstrap">Bootstrap</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_self" href="#laravel">Laravel Mix</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_self" href="#sass">Sass</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_self" href="#webpack">Webpack</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_self" href="#fontawesome">Fontawesome</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" target="_self" href="documentation.html">Documentation</a>
+            </li>
+        </block>
+    </extends>
+    <main>
+        <include src="_blocks/video.html">
+            {
+            "headline": "Configuration Tools",
+            "container_class": "mt-0",
+            "video_url": "/src/files/video"
+            }
+        </include>
+        <extends src="_blocks/headline_text_image.html">
+            <block name="headline">
+                <div id="bootstrap"></div>
+                <h2 class="text-uppercase">Bootstrap</h2>
+            </block>
+            <block name="image">
+                <a href="https://getbootstrap.com/" title="Bootstrap">
+                    <picture>
+                        <source srcset="/src/images/bootstrap.webp" type="image/webp">
+                        <img class="img-fluid border-radius mb-3" src="/src/images/bootstrap.jpg" alt="Bootstrap">
+                    </picture>
+                </a>
+                <p>You can load all modules of Bootstrap individually.</p>
+            </block>
+            <block name="content">
+                <code><span>In your bootsrap.scss file</span>
+                    <pre><i>@import</i> "~bootstrap/scss/nav"; <br><i>@import</i> "~bootstrap/scss/navbar"; </pre>
+                    <span>In your bootstrap.js file</span>
+                    <pre><i>import</i> 'bootstrap/js/dist/collapse';</pre>
+                </code>
+                <div class="d-flex w-100 justify-content-end">
+                    <a class="btn w-auto" href="https://getbootstrap.com/" title="Bootstrap">Get started</a>
+                </div>
+            </block>
+        </extends>
+        <extends src="_blocks/headline_text_image.html">
+            <block name="headline">
+                <div id="laravel"></div>
+                <h2 class="text-uppercase">Laravel Mix</h2>
+            </block>
+            <block name="image">
+                <a href="https://getbootstrap.com/" title="Laravel Mix">
+                    <picture>
+                        <source srcset="/src/images/laravel-mix.webp" type="image/webp">
+                        <img class="img-fluid border-radius mb-3" src="/src/images/laravel-mix.jpg" alt="Laravel Mix">
+                    </picture>
+                </a>
+                <p>Begin by installing Laravel Mix through NPM.</p>
+            </block>
+            <block name="content">
+                <code><span>Create a .env file</span>
+                    <pre><i>cp .env.example .env</i> </pre>
+                    <span>After creating .env file</span>
+                    <pre><i>npm install</i> laravel-mix --save-dev</pre>
+                    <span>Start the watcher</span>
+                    <pre><i>npx mix watch</i> </pre>
+                    <span>After finish run production for minified files</span>
+                    <pre><i>npx mix</i> --production</pre>
+                </code>
+                <div class="d-flex w-100 justify-content-end">
+                    <a class="btn w-auto" href="https://getbootstrap.com/" title="Laravel Mix">Read the docs</a>
+                </div>
+            </block>
+        </extends>
+        <extends src="_blocks/headline_text_image.html">
+            <block name="headline">
+                <div id="sass"></div>
+                <h2 class="text-uppercase">SASS</h2>
+            </block>
+            <block name="image">
+                <a href="https://sass-lang.com/guide" title="Sass">
+                    <picture>
+                        <source srcset="/src/images/sass.webp" type="image/webp">
+                        <img class="img-fluid border-radius mb-3" src="/src/images/sass.jpg" alt="SASS">
+                    </picture>
+                </a>
+                <p>Sass will be automatically compiled and loaded into the public directory.</p>
+            </block>
+            <block name="content">
+                <code><span>Be sure you are running the newest version</span>
+                    <pre><i>npm sass -v</i> <b>Current: ^1.52.2</b></pre>
+                    <span>Install newest version</span>
+                    <pre><i>npm i sass</i></pre>
+                </code>
+                <div class="d-flex w-100 justify-content-end">
+                    <a class="btn w-auto" href="https://sass-lang.com/guide" title="Sass">Check it out</a>
+                </div>
+            </block>
+        </extends>
+        <extends src="_blocks/headline_text_image.html">
+            <block name="headline">
+                <div id="webpack"></div>
+                <h2 class="text-uppercase">Webpack</h2>
+            </block>
+            <block name="image">
+                <a href="https://webpack.js.org/" title="Webpack">
+                    <picture>
+                        <source srcset="/src/images/webpack.webp" type="image/webp">
+                        <img class="img-fluid border-radius mb-3" src="/src/images/webpack.jpg" alt="Webpack">
+                    </picture>
+                </a>
+                <p>Webpack will watch every file and copy it into the public directory.</p>
+            </block>
+            <block name="content">
+                <code><span>For creating a webp image just copy a image file into the images directory and run</span>
+                    <pre><i>npx mix</i></pre>
+                    <span>You can find the whole configuration in</span>
+                    <pre>webpack.mix.js</pre>
+                </code>
+                <div class="d-flex w-100 justify-content-end">
+                    <a class="btn w-auto" href="https://webpack.js.org/" title="Webpack">Check it out</a>
+                </div>
+            </block>
+        </extends>
+        <extends src="_blocks/headline_text_image.html">
+            <block name="headline">
+                <div id="fontawesome"></div>
+                <h2 class="text-uppercase">FontAwesome</h2>
+            </block>
+            <block name="image">
+                <a href="https://fontawesome.com/" title="FontAwesome">
+                    <picture>
+                        <source srcset="/src/images/fontawesome.webp" type="image/webp">
+                        <img class="img-fluid border-radius mb-3" src="/src/images/fontawesome.jpg" alt="FontAwesome">
+                    </picture>
+                </a>
+                <p>Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.</p>
+            </block>
+            <block name="content">
+                <code><span>Import the icon you want into the fontawesome.js file</span>
+                    <pre><i>import</i> { faCube, faFontAwesome } <i>from</i> '@fortawesome/pro-thin-svg-icons'</pre>
+                    <span>Add the icon into the library in the fontawesome.js file</span>
+                    <pre>library.add(faCube, faFontAwesome)</pre>
+                    <span>Add the fontawesome i-tag to any html file</span> </code>
+                <div class="d-flex w-100 justify-content-end">
+                    <a class="btn w-auto" href="https://fontawesome.com/" title="FontAwesome">Find your Icon</a>
+                </div>
+            </block>
+        </extends>
+    </main>
+    <footer>
+        <include src="_includes/footer.html"></include>
+    </footer>
+</div>
+<include src="_includes/scripts.html"></include>
+</body>
+
+
+

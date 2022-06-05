@@ -65,7 +65,7 @@ mix.setPublicPath('public/src/')
         reload: true,
         files: [
             "public/**/**/**/**/*",
-            "resources/frontend/views/**/**/*",
+            "resources/frontend/views/**/**/*.html",
             'resources/frontend/fonts/**/*.{woff,woff2}',
             'resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
             'resources/frontend/js/**/*.js',

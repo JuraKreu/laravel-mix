@@ -13,14 +13,9 @@ html {
 }
 
 body {
-  overflow-x: hidden;
   color: $dark;
   background: #ebebeb;
   @include font($font-size, $font-weight, $line-height, $main-font);
-
-  #page {
-    overflow: hidden;
-  }
 }
 
 hr {
@@ -149,7 +144,7 @@ h1, h2, h3, h4, h5, h6,
 h2, .h2 {
   font-weight: 600;
   color: $dark;
-  font-size: clamp(24px, 5vw + 1rem , 40px);
+  font-size: clamp(20px, 3vw + 1rem , 40px);
   line-height: 1.5;
   letter-spacing: 1px;
   margin: 0;

@@ -1,5 +1,5 @@
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   background: darken(#ebebeb, 5);
@@ -21,8 +21,12 @@
         .nav-link {
           color: $dark;
           text-transform: uppercase;
-          font-weight: 400;
-          font-size: rem(18px);
+          font-weight: 600;
+          font-size: rem(17px);
+
+          &.active {
+            color: $primary;
+          }
 
           @include breakpoint(large) {
             &:hover {
@@ -42,7 +46,6 @@
 
 .branding {
   display: block;
-  margin-block-start: 200px;
 
   img {
     width: 100%;

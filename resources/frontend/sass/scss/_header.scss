@@ -1,4 +1,9 @@
 header {
   position: relative;
+  height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 

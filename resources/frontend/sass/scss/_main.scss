@@ -46,7 +46,7 @@ main {
       border-radius: rem(5px);
       position: relative;
       text-align: center;
-      height: clamp(200px, 25vw, 400px);
+      height: clamp(200px, 25vw, 350px);
       transition: $transition;
       box-shadow: 0 20px 50px -10px rgba(9, 9, 16, 1);
       display: block;
@@ -107,7 +107,7 @@ main {
   }
 }
 
-#sass, #laravel, #bootstrap, #webpack {
+#sass, #laravel, #bootstrap, #webpack, #fontawesome {
   padding-block-start: 100px;
   margin-block-start: -100px;
 }

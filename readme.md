@@ -7,25 +7,21 @@ cp .env.example .env
 ```
 
 ### 2. Install laravel-mix
-
 ```shell script
 npm install laravel-mix --save-dev
 ```
 
 ### 3. Start Production
-
 ```shell script
 npx mix watch
 ```
 
 ### Create Public directory or Webp Images
-
 ```shell script
 npx mix
 ```
 
 ### Minify Public directory
-
 ```shell script
 npx mix --production
 ```
