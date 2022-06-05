@@ -2,7 +2,6 @@ let mix = require('laravel-mix');
 require('mix-html-builder');
 require('laravel-mix-webp');
 require('laravel-mix-copy-watched');
-require('mix-env-file');
 
 mix.sass('resources/frontend/sass/styles.scss', 'public/css').sourceMaps()
     .sass('resources/frontend/sass/bootstrap.scss', 'public/css').sourceMaps()
