@@ -2,79 +2,79 @@ let mix = require('laravel-mix');
 require('mix-html-builder');
 require('laravel-mix-webp');
 require('laravel-mix-copy-watched');
-
-mix.sass('resources/frontend/sass/styles.scss', 'public/css').sourceMaps()
-    .sass('resources/frontend/sass/bootstrap.scss', 'public/css').sourceMaps()
-    .js('resources/frontend/js/bootstrap.js', 'public/js')
-    .js('resources/frontend/js/fontawesome.js', 'public/js')
-    .js('resources/frontend/js/core.js', 'public/js')
-    .options({
-        processCssUrls: false
-    });
-
-mix.copyWatched(
-    'resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
-    'public/images',
-    {
-        base: 'resources/frontend/images'
-    }
-);
-
-mix.copyWatched(
-    'resources/frontend/files/**/*',
-    'public/files',
-    {
-        base: 'resources/frontend/files'
-    }
-);
-
-mix.copyWatched(
-    'resources/frontend/fonts/**/*.{woff,woff2}',
-    'public/fonts',
-    {
-        base: 'resources/frontend/fonts'
-    }
-);
-
-mix.ImageWebp({
-    from: 'resources/frontend/images',
-    to: 'public/images',
-    imageminWebpOptions: {
-        quality: 100
-    },
-})
+require('dotenv').config();
 
 let proxy_url = process.env.BROWSERSYNC_PROXY_URL,
     proxy_port = process.env.BROWSERSYNC_PROXY_PORT,
     proxy_path = process.env.BROWSERSYNC_PROXY_PATH;
 
-mix.browserSync({
-    host: proxy_url,
-    server: proxy_path,
-    port: proxy_port,
-    reload: true,
-    files: [
-        "public/**/**/**/**/*",
-        "resources/frontend/views/**/**/*",
-        'resources/frontend/fonts/**/*.{woff,woff2}',
+mix.setPublicPath('public')
+    .sass('resources/frontend/sass/styles.scss', 'css').sourceMaps()
+    .sass('resources/frontend/sass/bootstrap.scss', 'css').sourceMaps()
+    .js('resources/frontend/js/bootstrap.js', 'js')
+    .js('resources/frontend/js/fontawesome.js', 'js')
+    .js('resources/frontend/js/core.js', 'js')
+    .sourceMaps()
+    .options({
+        processCssUrls: false,
+        purifyCss: false,
+        clearConsole: false,
+        postCss: [require('autoprefixer')]
+    })
+    .copyWatched(
         'resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
-        'resources/frontend/js/**/*.js',
-        'resources/frontend/sass/**/*.scss',
-    ]
-});
-
-mix.html ({
-    htmlRoot: './resources/frontend/views/*.html',
-    output: 'public',
-    partialRoot: './resources/frontend/views',
-    layoutRoot: './resources/frontend/views',
-    minify: {
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-    }
-});
+        'public/images',
+        {
+            base: 'resources/frontend/images'
+        }
+    )
+    .copyWatched(
+        'resources/frontend/files/**/*',
+        'public/files',
+        {
+            base: 'resources/frontend/files'
+        }
+    )
+    .copyWatched(
+        'resources/frontend/fonts/**/*.{woff,woff2}',
+        'public/fonts',
+        {
+            base: 'resources/frontend/fonts'
+        }
+    )
+    .ImageWebp({
+        from: 'resources/frontend/images',
+        to: 'public/images',
+        imageminWebpOptions: {
+            quality: 100
+        },
+    })
+    .browserSync({
+        host: proxy_url,
+        server: proxy_path,
+        port: proxy_port,
+        reload: true,
+        files: [
+            "public/**/**/**/**/*",
+            "resources/frontend/views/**/**/*",
+            'resources/frontend/fonts/**/*.{woff,woff2}',
+            'resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
+            'resources/frontend/js/**/*.js',
+            'resources/frontend/sass/**/*.scss',
+        ]
+    })
+    .html ({
+        htmlRoot: './resources/frontend/views/*.html',
+        output: '',
+        partialRoot: './resources/frontend/views',
+        layoutRoot: './resources/frontend/views',
+        minify: {
+            removeComments: true,
+            removeRedundantAttributes: true,
+            removeScriptTypeAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            useShortDoctype: true
+        }
+    });
 
 
