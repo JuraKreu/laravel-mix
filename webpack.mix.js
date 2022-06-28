@@ -79,7 +79,7 @@ mix
             './resources/files/**/**/*'
         ]
     })
-    .html ({
+    .html({
         htmlRoot: './resources/views/frontend/*.html',
         output: '../',
         partialRoot: './resources/views/frontend',
