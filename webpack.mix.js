@@ -19,11 +19,11 @@ mix
             children: false
         }
     })
-    .sass('./resources/frontend/sass/styles.scss', 'css')
-    .sass('./resources/frontend/sass/bootstrap.scss', 'css')
-    .js('./resources/frontend/js/bootstrap.js', 'js')
-    .js('./resources/frontend/js/fontawesome.js', 'js')
-    .js('./resources/frontend/js/core.js', 'js')
+    .sass('./resources/sass/styles.scss', 'css')
+    .sass('./resources/sass/bootstrap.scss', 'css')
+    .js('./resources/js/bootstrap.js', 'js')
+    .js('./resources/js/fontawesome.js', 'js')
+    .js('./resources/js/core.js', 'js')
     .sourceMaps()
     .options({
         processCssUrls: false,
@@ -35,28 +35,28 @@ mix
         autoprefixer: true
     })
     .copyWatched(
-        './resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
+        './resources/images/**/*.{ico,gif,jpg,png,svg}',
         './public/src/images',
         {
-            base: './resources/frontend/images'
+            base: './resources/images'
         }
     )
     .copyWatched(
-        './resources/frontend/files/**/*',
+        './resources/files/**/*',
         './public/src/files',
         {
-            base: './resources/frontend/files'
+            base: './resources/files'
         }
     )
     .copyWatched(
-        './resources/frontend/fonts/**/*.{woff,woff2}',
+        './resources/fonts/**/*.{woff,woff2}',
         './public/src/fonts',
         {
-            base: './resources/frontend/fonts'
+            base: './resources/fonts'
         }
     )
     .ImageWebp({
-        from: './resources/frontend/images',
+        from: './resources/images',
         to: './public/src/images',
         imageminWebpOptions: {
             quality: 100
@@ -70,19 +70,20 @@ mix
         reload: true,
         ghostMode: false,
         files: [
-            "./public/*",
-            "./resources/frontend/views/**/**/*.html",
-            './resources/frontend/fonts/**/*.{woff,woff2}',
-            './resources/frontend/images/**/*.{ico,gif,jpg,png,svg}',
-            './resources/frontend/js/**/*.js',
-            './resources/frontend/sass/**/*.scss',
+            './public/*',
+            './resources/views/**/**/*.html',
+            './resources/fonts/**/*.{woff,woff2}',
+            './resources/images/**/*.{ico,gif,jpg,png,svg}',
+            './resources/js/**/*.js',
+            './resources/sass/**/*.scss',
+            './resources/files/**/**/*'
         ]
     })
     .html ({
-        htmlRoot: './resources/frontend/views/*.html',
+        htmlRoot: './resources/views/frontend/*.html',
         output: '../',
-        partialRoot: './resources/frontend/views',
-        layoutRoot: './resources/frontend/views',
+        partialRoot: './resources/views/frontend',
+        layoutRoot: './resources/views/frontend',
         minify: {
             removeComments: true,
             removeRedundantAttributes: true,
