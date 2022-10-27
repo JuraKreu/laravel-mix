@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<extends src="_includes/head.html">
+    <block name="title">
+        <title>Video</title>
+    </block>
+    <block name="description">
+        <meta name="description" content="Beschreibung">
+    </block>
+    <block name="styles">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.0.0-0/video-js.css">
+    </block>
+</extends>
+<body class="no-js home">
+<div id="page">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <video id="my-video" class="video-js" autoplay muted loop>
+                        <source src="/src/files/video-js.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-button">
+                        <span>Play</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <extends src="_includes/navigation.html">
+        <block name="navigation">
+            <li class="nav-item">
+                <a class="nav-link" target="_self" href="documentation.html">Documentation</a>
+            </li>
+        </block>
+    </extends>
+    <main>
+
+    </main>
+    <footer>
+        <include src="_includes/footer.html"></include>
+    </footer>
+</div>
+<extends src="_includes/scripts.html">
+    <block name="scripts">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.0.0-0/video.js"></script>
+        <script>
+            const videoPlayer = videojs('my-video');
+
+            document.querySelector('.video-button').addEventListener('click', function() {
+                videoPlayer.requestFullscreen();
+            });
+
+            videoPlayer.on('fullscreenchange', function () {
+                if (document.fullscreenElement) {
+                    this.controls(true);
+                    this.muted(false);
+                    this.loop(false);
+                } else {
+                    this.muted(true);
+                    this.controls(false);
+                    this.loop(true);
+                }
+            });
+
+            videoPlayer.on('ended', function() {
+                if(document.fullscreenElement ) {
+                    document.exitFullscreen();
+                    this.load();
+                }
+            });
+        </script>
+    </block>
+</extends>
+</body>
+
+
+

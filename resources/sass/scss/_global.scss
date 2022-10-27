@@ -171,3 +171,12 @@ h2, .h2 {
 .margin-block-start-100 {
   margin-block-start: rem(100px);
 }
+
+.my-video-dimensions {
+  width: 100%;
+  height: auto;
+}
+
+.video-js {
+  aspect-ratio: 16/9;
+}
